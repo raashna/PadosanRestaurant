@@ -1,158 +1,17 @@
 import React from "react";
-
+import './Contact.css'
 export const Contact = () => {
   return (
-    <div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
+    <>
+    <form>
+     <h1>Contact <span>Us</span></h1>
+     <input type ="text" name = "name" id="" placeholder="Enter name"/>
+     <input type="email" name="email" id="" placeholder="Enter Email" />
+     <input type="phone" name="phone" id="" placeholder="+91" /> 
 
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat saepe
-        voluptatem ullam consequatur error illo veritatis optio eum perspiciatis
-        temporibus tenetur, explicabo earum asperiores obcaecati totam commodi
-        reiciendis consequuntur voluptate itaque iusto consectetur. Mollitia
-        numquam ut praesentium tenetur quidem sint molestiae quod neque id
-        voluptatum quasi, explicabo quo deleniti aperiam cupiditate eligendi?
-        Necessitatibus veritatis et cumque voluptatem ipsa vero sed sapiente
-        asperiores odio nobis ea perspiciatis, possimus eos animi quisquam quasi
-        tempore id excepturi illo qui repellat tempora molestias repellendus.
-        Similique ad cum quasi soluta! Vero, suscipit voluptas ipsum at repellat
-        ipsam tenetur, esse, eos dolorum eligendi distinctio aliquid pariatur.
-      </div>
-
-      <br />
-    </div>
+     <textarea name = "message" id="" cols="30" rows="10" placeholder="Share your thoughts..."></textarea>
+     <button type="submit ">Send</button>
+    </form>
+    </>
   );
 };
