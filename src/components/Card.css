@@ -1,0 +1,22 @@
+.card-container {
+    width: 30vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-block: 1px;
+
+}
+
+.circular-image {
+    width: 20vw;
+    height: 15vw;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+@media (max-width:600px) {
+    .card-container{
+        width: 30vw;
+    }
+}
