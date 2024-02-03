@@ -2,6 +2,7 @@ import React from "react";
 import './home.css';
 import logo from '/padosan_logo.jpg'
 import centreImg from '/centreImg.jpg'
+import titiksha from '/titiksha_logo.jpg'
 import {Card} from "/src/components/Card.jsx"
 
 export const Home = () => {
@@ -9,6 +10,11 @@ export const Home = () => {
         <>
       <div className="centre-img">
         <img src={centreImg} alt="logo"></img>
+        <div class="text_container">
+        <h2 class="img_text">Taste the difference.</h2>
+        <button href="./">Order Now</button>
+        </div>
+
       </div>
 
 
@@ -17,7 +23,7 @@ export const Home = () => {
         <ul className="venture" typeof="none">
           <li>
             <Card
-            imageUrl={logo}
+            imageUrl={titiksha}
             title="Titiksha"
             description="trying"
             />
@@ -38,6 +44,7 @@ export const Home = () => {
           </li>
       </ul>
       </div>
+
             
       </> 
     )

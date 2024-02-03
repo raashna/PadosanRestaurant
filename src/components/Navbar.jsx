@@ -7,6 +7,7 @@ import logo from '/public/padosan_logo.jpg'
 
 
 export const Navbar = () =>{
+    
     const [menuOpen , setMenuOpen]= useState(false)
     return ( 
         <nav>
@@ -19,6 +20,7 @@ export const Navbar = () =>{
         <span></span>
         <span></span>
        </div>
+       <script></script>
         <ul className={menuOpen ? "open" : ""}>
             <li>
             <NavLink to = "/home">Home</NavLink>

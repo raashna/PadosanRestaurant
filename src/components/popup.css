@@ -1,0 +1,21 @@
+.pop{
+    display: block;
+}
+.btn{
+    background-color: rgb(225, 26, 26);
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 50%;
+    font-weight: 400;
+    box-shadow: #eeafaf;
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    z-index: 2000;
+}
+.btn img{
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+}

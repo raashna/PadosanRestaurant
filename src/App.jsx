@@ -3,9 +3,12 @@ import {Navbar} from "./components/Navbar"
 import './App.css'
 import {Route,Routes} from "react-router-dom"
 
-
+//import butterfly from '/public/butterfly2.gif'
+//<a id="pic0" href="javascript:hidebutterfly()"><img src={butterfly} name="p1" border="0"></img></a>
 
 import { About , Contact , Gallery, Home, Menu} from "./components/pages"
+import MovingGif from './components/butterfly'
+import Popup from './components/popup'
 function App() {
  
   return (
@@ -21,7 +24,11 @@ function App() {
         <Route path = "/gallery" element = {<Gallery/>}/>
         
       </Routes>
-     </div>
+       </div>
+      <MovingGif></MovingGif>
+      <Popup></Popup>
+      
+     
     </>
   )
 }

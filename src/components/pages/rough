@@ -1,0 +1,14 @@
+const [isVisible, setIsVisible] = useState(true);
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const shouldBeVisible = scrollPosition > 100; // Adjust the scroll threshold as needed
+            setIsVisible(shouldBeVisible);
+        };
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
