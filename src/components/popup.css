@@ -1,21 +1,37 @@
-.pop{
+.info-button{
     display: block;
 }
 .btn{
-    background-color: rgb(225, 26, 26);
-    font-size: 1.5vw;
-    padding: 1vw 2vw;
-    border: none;
-    border-radius: 50%;
-    font-weight: 400;
-    box-shadow: #eeafaf;
     position: fixed;
-    width: 5vw;
-    height: 5vw;
-    z-index: 2000;
+    bottom: 5vh;
+    right: 5vw;
+    cursor: pointer;
+    z-index: 1000;
+
 }
 .btn img{
     border-radius: 50%;
-    width: 5vw;
-    height: 5vw;
+    height:10vmin;
+    width: 10vmin;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: rgb(237, 224, 224);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    z-index: 2000;
+}
+
+.info-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: rgb(245, 233, 233);
+
 }

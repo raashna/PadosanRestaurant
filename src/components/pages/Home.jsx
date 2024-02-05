@@ -25,21 +25,21 @@ export const Home = () => {
             <Card
             imageUrl={titiksha}
             title="Titiksha"
-            description="trying"
+            description="Hotel Titiksha is a luxurious haven offering unparalleled comfort and sophistication. Nestled in the heart of the city, it boasts exquisite decor, state-of-the-art amenities, and impeccable service. From spacious rooms to gourmet dining, Titiksha promises a memorable stay, ensuring guests experience opulence and relaxation at its finest."
             />
           </li>
           <li>
             <Card
             imageUrl={logo}
             title="Atithi"
-            description="trying"
+            description="Hotel Atithi epitomizes elegance and hospitality in a prime location. With tastefully designed rooms, modern amenities, and attentive service, it defines a perfect blend of comfort and style. Guests are treated to a delightful experience, relishing fine dining and a warm atmosphere. Atithi is where hospitality meets sophistication."
             />
           </li>
           <li>
             <Card
             imageUrl={logo}
             title="Amantran"
-            description="trying"
+            description="Amantran Banquet sets the stage for unforgettable events with its exquisite venue and impeccable services. The venue exudes charm and sophistication, providing a perfect backdrop for celebrations. With spacious halls, top-notch facilities, and a dedicated staff, Amantran ensures that every occasion is a seamless and memorable affair."
             />
           </li>
       </ul>

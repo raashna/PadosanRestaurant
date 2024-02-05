@@ -1,5 +1,5 @@
 .card-container {
-    display:inline-block;
+    display:flex;
     width: 30vw;
     height: 100%;
     border: 1px solid #ccc;
@@ -9,17 +9,22 @@
     margin-block: 2px;
     justify-content: space-around;
     overflow-y: hidden;
+    box-shadow: black;
 
 }
-.card-container h2{
+.card-title{
     margin-bottom: 2vh;
     font-size: 2vw;
 }
-.card-container p {
+.card-text{
     margin-bottom: 2vh;
-    font-size: 1vw;;
+    font-size: 1vw;
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    margin-right: 2vw;
 }
-.card-container button {
+.btn-primary{
     background-color: rgb(237, 224, 224);
     font-size: 1.5vw;
     padding: 1vw 2vw;
@@ -27,11 +32,10 @@
     border-radius: 20px;
     font-weight: 400;
     box-shadow: #eeafaf;
-    position: absolute;
-    z-index: 1;
+    
 }
 
-.circular-image {
+.card-img-top {
     width: 20vw;
     height: 15vw;
     border-radius: 50%;
