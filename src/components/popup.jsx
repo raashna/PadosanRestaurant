@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './popup.css'; // Import the CSS file
-import atithi from '/atithi.png';
+import chat from '/chat.jpg';
+
 
 const InfoCard = ({ onClose})=>{
     return (
@@ -19,7 +20,9 @@ export const Popup = () => {
   return (
     <>
     <div className="info-button">
-        <i className="btn" onClick={toggleInfoCard}><img src={atithi}></img></i>
+        <i className="btn" onClick={toggleInfoCard}>
+            <img src={chat}></img>
+          </i>
     </div>
     {infoCardVisible && <InfoCard onClose={toggleInfoCard}/>}
     </>

@@ -8,7 +8,10 @@ import logo from '/public/padosan_logo.jpg'
 
 export const Navbar = () =>{
     
-    const [menuOpen , setMenuOpen]= useState(false)
+    const [menuOpen , setMenuOpen]= useState(false);
+    const closeMenu = ()=> {
+        setMenuOpen(false);
+    };
     return ( 
         <nav>
         <Link to = "/" className="title">
@@ -23,19 +26,19 @@ export const Navbar = () =>{
        <script></script>
         <ul className={menuOpen ? "open" : ""}>
             <li>
-            <NavLink to = "/home">Home</NavLink>
+            <NavLink to = "/home" onClick={closeMenu}>Home</NavLink>
             </li>
             <li>
-            <NavLink to = "/about">About</NavLink>
+            <NavLink to = "/about" onClick={closeMenu}>About</NavLink>
             </li>
             <li>
-            <NavLink to = "/menu">Menu</NavLink>
+            <NavLink to = "/menu" onClick={closeMenu}>Menu</NavLink>
             </li>
             <li>
-            <NavLink to = "/gallery">Gallery</NavLink>
+            <NavLink to = "/gallery" onClick={closeMenu}>Gallery</NavLink>
             </li>
             <li>
-            <NavLink to = "/contact">Contact</NavLink>
+            <NavLink to = "/contact" onClick={closeMenu}>Contact</NavLink>
             </li>
         </ul>
     </nav>

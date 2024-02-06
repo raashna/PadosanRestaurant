@@ -1,7 +1,12 @@
 import React from "react";
 import './about.css';
 import director from '/director.png';
-import atithi from '/atithi.png';
+import atithi from '/atithi.jpg';
+import party from '/Party.jpg';
+import parking from '/parking.jpg';
+import play from '/playarea.jpg';
+import amantran from '/amantran.jpg';
+import bar from '/bar.jpg';
 
 export const About = () => {
     return (
@@ -10,28 +15,28 @@ export const About = () => {
             <h1>We Offer</h1>
             <article className="offer">
                 <div>
-                    <img src={director}></img>
+                    <img src={party}></img>
                     <h4>party</h4>
                 </div>
                 <div>
-                    <img src={director}></img>
-                    <h4>party</h4>
+                    <img src={parking}></img>
+                    <h4>spacious parking</h4>
                 </div>
                 <div>
-                    <img src={director}></img>
-                    <h4>party</h4>
+                    <img src={play}></img>
+                    <h4>childrens play area</h4>
                 </div>
                 <div>
-                    <img src={director}></img>
-                    <h4>party</h4>
+                    <img src={atithi}></img>
+                    <h4>accomodations</h4>
                 </div>
                 <div>
-                    <img src={director}></img>
-                    <h4>party</h4>
+                    <img src={bar}></img>
+                    <h4>separate bar area</h4>
                 </div>
                 <div>
-                    <img src={director}></img>
-                    <h4>party</h4>
+                    <img src={amantran}></img>
+                    <h4>Banquet</h4>
                 </div>
                 
             </article>

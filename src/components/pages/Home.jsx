@@ -1,6 +1,7 @@
 import React from "react";
 import './home.css';
-import logo from '/padosan_logo.jpg'
+import atithi from '/atithi.jpg'
+import amantran from '/amantran.jpg'
 import centreImg from '/centreImg.jpg'
 import titiksha from '/titiksha_logo.jpg'
 import {Card} from "/src/components/Card.jsx"
@@ -30,14 +31,14 @@ export const Home = () => {
           </li>
           <li>
             <Card
-            imageUrl={logo}
+            imageUrl={atithi}
             title="Atithi"
             description="Hotel Atithi epitomizes elegance and hospitality in a prime location. With tastefully designed rooms, modern amenities, and attentive service, it defines a perfect blend of comfort and style. Guests are treated to a delightful experience, relishing fine dining and a warm atmosphere. Atithi is where hospitality meets sophistication."
             />
           </li>
           <li>
             <Card
-            imageUrl={logo}
+            imageUrl={amantran}
             title="Amantran"
             description="Amantran Banquet sets the stage for unforgettable events with its exquisite venue and impeccable services. The venue exudes charm and sophistication, providing a perfect backdrop for celebrations. With spacious halls, top-notch facilities, and a dedicated staff, Amantran ensures that every occasion is a seamless and memorable affair."
             />

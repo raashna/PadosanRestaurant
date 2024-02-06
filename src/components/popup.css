@@ -4,7 +4,7 @@
 .btn{
     position: fixed;
     bottom: 5vh;
-    right: 5vw;
+    right: 3vw;
     cursor: pointer;
     z-index: 1000;
 

@@ -8,8 +8,9 @@
     text-align: center;
     margin-block: 2px;
     justify-content: space-around;
-    overflow-y: hidden;
+    overflow-y:auto;
     box-shadow: black;
+    font-family: 'Protest Riot', sans-serif;
 
 }
 .card-title{
