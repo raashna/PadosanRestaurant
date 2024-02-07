@@ -26,9 +26,48 @@ import slide_image_20 from "/xyz/A1 (23).jpg";
 import slide_image_21 from "/xyz/A1 (24).jpg";
 import slide_image_22 from "/xyz/A1 (26).jpg";
 import slide_image_23 from "/xyz/A1 (27).jpg";
+
+
+
+
+
+
+
+
 const options = [
   {
     id: "1",
+    name: "All Photos",
+    images: [
+      slide_image_1,
+      slide_image_2,
+      slide_image_3,
+      slide_image_4,
+      slide_image_5,
+      slide_image_6,
+      slide_image_7,
+      slide_image_8,
+      slide_image_9,
+      slide_image_10,
+      slide_image_11,
+      slide_image_12,
+      slide_image_13,
+      slide_image_14,
+      slide_image_15,
+      slide_image_16,
+      slide_image_17,
+      slide_image_18,
+      slide_image_19,
+      slide_image_20,
+      slide_image_21,
+      slide_image_22,
+      slide_image_23,
+    ],
+  },
+
+
+  {
+    id: "2",
     name: "Amantran",
     images: [
       slide_image_1,
@@ -57,7 +96,7 @@ const options = [
     ],
   },
   {
-    id: "2",
+    id: "3",
     name: "Padosan",
     images: [
       "https://i.pinimg.com/236x/03/8a/01/038a0143f1ce26de1626b33e6bb5a69c.jpg",
@@ -71,7 +110,7 @@ const options = [
     ],
   },
   {
-    id: "3",
+    id: "4",
     name: "Atithi",
     images: [
       "https://i.pinimg.com/236x/32/8e/26/328e26f83b540df3208218756b6f3774.jpg",
@@ -85,7 +124,7 @@ const options = [
     ],
   },
   {
-    id: "4",
+    id: "5",
     name: "Titiksha",
     images: [
       "https://i.pinimg.com/236x/5e/98/7a/5e987a932348036c8bf85d0b0fe9f632.jpg",
