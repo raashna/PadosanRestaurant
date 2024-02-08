@@ -8,7 +8,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(237, 224, 224);
+    background-color: #FFE4C9;
     color: white;
     z-index: 1000;
     position: sticky;
@@ -19,7 +19,7 @@ nav img{
     margin-left: 1rem;
     height: 80px;
     width: 100%;
-    mix-blend-mode: multiply;
+   
     border: none;
 }
 

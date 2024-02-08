@@ -54,8 +54,8 @@ li {
 }
 
 .image-grid-item:hover {
-  transform: scale(1.05); /* Slightly increase the size on hover */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .image-grid-item img {
@@ -63,6 +63,14 @@ li {
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
+}
+
+.options-menu li.active {
+ 
+  background-color: #74d2c9; 
+  color: white; 
+  font-weight: bold; 
+  border-radius: 5px;
 }
 
 @media (max-width: 600px) {

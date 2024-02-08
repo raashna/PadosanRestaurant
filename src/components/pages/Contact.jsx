@@ -17,7 +17,7 @@ export const Contact = () => {
       .then(
         () => {
           console.log("SUCCESS!");
-          console.log("Message Sent")
+          form.current.reset();
         },
         (error) => {
           console.log("FAILED...", error.text);
