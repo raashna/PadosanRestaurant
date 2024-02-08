@@ -144,9 +144,13 @@ export const Gallery = () => {
   return (
     <>
       <div className="image-gallery">
-        <div className="options-menu">
+      <div className="options-menu">
           {options.map((option) => (
-            <li key={option.id} onClick={() => setSelectedOption(option)}>
+            <li
+              key={option.id}
+              className={selectedOption.id === option.id ? "active" : ""}
+              onClick={() => setSelectedOption(option)}
+            >
               {option.name}
             </li>
           ))}
