@@ -8,21 +8,23 @@ div h2{
     display: block;
     align-items: center;
     display: flex;
-    height: 100vh;
+    height: calc(100%-100px);
     width: 100%;
     margin-bottom: 5vh;
+    z-index: 1;
     
 }
 
 .centre-img img{
     height: 100%;
     width:100%;
+    z-index: 2;
 }
 .text_container{
     
-    z-index: 1;
+    z-index: 100;
     position: absolute;
-    top: 70vh;
+    top: 40%;
     left: 10vw;
     gap: 10vh;
 }
