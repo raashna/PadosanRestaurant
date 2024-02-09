@@ -7,10 +7,12 @@
 
 .footer-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
+    
 }
 
 .social-icons {
@@ -18,7 +20,7 @@
 }
 
 .icon-link {
-    margin: 0 10px;
+    margin: 10px;
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -34,4 +36,10 @@ img{
 .icon-link:hover {
     color: #00aced;
     /* Change to your preferred hover color */
+}
+
+@media screen and (max-width: 768px){
+    .icon-link{
+        margin: 5px;
+    }
 }

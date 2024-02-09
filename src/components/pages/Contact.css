@@ -245,7 +245,7 @@ button {
 .bgtext{
  
   position: absolute;
-  top: 28vh;
+  top: 30vh;
   left: 48vw;
   transform: translate(-50%, -50%);
   color: rgb(255, 0, 0); /* You can adjust the color based on your design */

@@ -61,6 +61,8 @@ p{
     }
     .offer{
         font-size: small;
+        padding: 2vh;
+        gap: 2vmax;
     }
     .about {
         padding: 5px;
