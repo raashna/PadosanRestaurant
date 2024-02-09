@@ -2,7 +2,6 @@ import React from "react";
 import './about.css';
 import director from '/director.png';
 import atithi from '/atithi.jpg';
-import party from '/Party.jpg';
 import parking from '/parking.jpg';
 import play from '/playarea.jpg';
 import amantran from '/amantran.jpg';
@@ -14,10 +13,6 @@ export const About = () => {
         <div>
             <h1>We Offer</h1>
             <article className="offer">
-                <div>
-                    <img src={party}></img>
-                    <h4>party</h4>
-                </div>
                 <div>
                     <img src={parking}></img>
                     <h4>spacious parking</h4>
