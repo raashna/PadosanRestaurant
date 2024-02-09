@@ -144,7 +144,7 @@ export const Gallery = () => {
   return (
     <>
       <div className="image-gallery">
-      <div className="options-menu">
+        <div className="options-menu">
           {options.map((option) => (
             <li
               key={option.id}
