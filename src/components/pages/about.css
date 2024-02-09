@@ -11,6 +11,8 @@ div h1{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
     
 }
 .offer img {
@@ -56,6 +58,9 @@ p{
     p{
         margin-top: 5vh;
         margin-left: 5vw;
+    }
+    .offer{
+        font-size: small;
     }
     .about {
         padding: 5px;
