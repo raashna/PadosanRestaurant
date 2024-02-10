@@ -1,7 +1,8 @@
-
 import React from "react";
 import "./Gallery.css";
 import { useState } from "react";
+
+import ReactPlayer from 'react-player'
 
 import slide_image_1 from "/xyz/A1 (1).jpg";
 import slide_image_2 from "/xyz/A1 (2).jpg";
@@ -26,13 +27,9 @@ import slide_image_20 from "/xyz/A1 (23).jpg";
 import slide_image_21 from "/xyz/A1 (24).jpg";
 import slide_image_22 from "/xyz/A1 (26).jpg";
 import slide_image_23 from "/xyz/A1 (27).jpg";
-
-
-
-
-
-
-
+// import videos 
+import padosan1 from "/videos/Padosan.mp4"
+import sampleVideo1 from "/xyz/sampleVideo.mp4"
 
 const options = [
   {
@@ -137,13 +134,26 @@ const options = [
       "https://i.pinimg.com/236x/27/4e/ef/274eeff56d51428f4665143181819825.jpg",
     ],
   },
+
+  {
+    id: "6", // You can add more sections as needed
+    name: "Videos",
+    videos: [
+      { url: sampleVideo1, title: "Sample Video 1" },
+      { url: padosan1, title: "IntoPadosan" },
+     
+      // Add more videos as needed
+    ],
+  },
 ];
+
 
 export const Gallery = () => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
+
   return (
     <>
-      <div className="image-gallery">
+      <div className="gallery-container">
         <div className="options-menu">
           {options.map((option) => (
             <li
@@ -155,15 +165,33 @@ export const Gallery = () => {
             </li>
           ))}
         </div>
-        <div className="image-grid">
-          {selectedOption.images.map((image, index) => (
-            <div key={index} className="image-grid-item">
-              <img src={image} alt={`Image ${index + 1}`} />
+        <div className="media-container">
+          {selectedOption.images && (
+            <div className="image-grid">
+              {selectedOption.images.map((image, index) => (
+                <div key={index} className="image-grid-item">
+                  <img src={image} alt={`Image ${index + 1}`} />
+                </div>
+              ))}
             </div>
-          ))}
+          )}
+          {selectedOption.videos && (
+            <div className="video-grid">
+              {selectedOption.videos.map((video, index) => (
+                <div key={index} className="video-grid-item">
+                  <ReactPlayer
+                    url={video.url}
+                    controls={true}
+                    width="100%"
+                    height="100%"
+                  />
+                  <p>{video.title}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>
   );
 };
-

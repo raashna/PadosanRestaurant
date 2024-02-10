@@ -88,6 +88,52 @@ li {
   }
 }
 
+
+
+
+
+
+
+
+
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-grid-item {
+  height: 240px;
+  width: 240px;
+  margin: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.video-grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-grid-item .react-player {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.video-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
 @media (max-width: 400px) {
   .image-grid-item {
     width: calc(100% - 30px);
