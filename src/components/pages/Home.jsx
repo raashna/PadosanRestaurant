@@ -12,8 +12,8 @@ export const Home = () => {
         <>
       <div className="centre-img">
         <img src={centreImg} alt="logo"></img>
-        <div class="text_container">
-        <h2 class="img_text">Taste the difference.</h2>
+        <div className="text_container">
+        <h2 className="img_text">Taste the difference.</h2>
         <Link to="/menu">
           <button>Order Now</button>
         </Link>

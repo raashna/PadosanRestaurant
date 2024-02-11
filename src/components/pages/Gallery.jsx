@@ -29,7 +29,7 @@ import slide_image_22 from "/xyz/A1 (26).jpg";
 import slide_image_23 from "/xyz/A1 (27).jpg";
 // import videos 
 import padosan1 from "/videos/Padosan.mp4"
-import sampleVideo1 from "/xyz/sampleVideo.mp4"
+import sampleVideo1 from "/videos/sampleVideo.mp4"
 
 const options = [
   {

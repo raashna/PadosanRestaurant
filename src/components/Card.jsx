@@ -7,7 +7,7 @@ export const Card = ({ imageUrl, title, description,galleryLink }) => {
     <div className="card-container">
       <div className="card">
         <img src={imageUrl} className="card-img-top" alt="..."></img>
-        <div class="card-body">
+        <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
           <Link to={galleryLink} className="btn-primary">Explore</Link>
