@@ -4,15 +4,18 @@ import telephone from "/telephone.webp";
 import  { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
+
+
+
 export const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+  
     emailjs
-      .sendForm("service_qbv0h9g", "template_jvnvb2m", form.current, {
-        publicKey: "Ji8XJnYR43KU53oNb",
+      .sendForm(import.meta.env.VITE_SEND_FROM, import.meta.env.VITE_SEND_TEMPLATE, form.current, {
+        publicKey: import.meta.env.VITE_PUB_KEY,
       })
       .then(
         () => {
@@ -24,6 +27,8 @@ export const Contact = () => {
         }
       );
   };
+  
+  
 
   return (
     <>
