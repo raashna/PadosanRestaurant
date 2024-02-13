@@ -194,11 +194,12 @@ button {
   
   
   .location-text {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     margin-bottom: 20px;
+    color: rgb(205, 20, 20);
     font-family: 'Playfair Display';
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Add text shadow */
     
   }
    

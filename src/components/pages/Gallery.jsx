@@ -27,9 +27,18 @@ import slide_image_20 from "/xyz/A1 (23).jpg";
 import slide_image_21 from "/xyz/A1 (24).jpg";
 import slide_image_22 from "/xyz/A1 (26).jpg";
 import slide_image_23 from "/xyz/A1 (27).jpg";
-// import videos 
+ 
 import padosan1 from "/videos/Padosan.mp4"
-import sampleVideo1 from "/videos/sampleVideo.mp4"
+
+import instavideo1 from '/videos/Reelvideo1.mp4';
+import instavideo2 from '/videos/Reelvideo2.mp4';
+import instavideo3 from '/videos/Reelvideo3.mp4';
+import instavideo4 from '/videos/Reelvideo4.mp4';
+import instavideo5 from '/videos/Reelvideo5.mp4';
+import instavideo6 from '/videos/Reelvideo6.mp4';
+import instavideo7 from '/videos/Reelvideo7.mp4';
+import instavideo8 from '/videos/Reelvideo8.mp4';
+
 
 const options = [
   {
@@ -136,13 +145,21 @@ const options = [
   },
 
   {
-    id: "6", // You can add more sections as needed
+    id: "6", 
     name: "Videos",
     videos: [
-      { url: sampleVideo1, title: "Sample Video 1" },
       { url: padosan1, title: "IntoPadosan" },
+      { url: instavideo1, title: "IntoPadosan" },
+      { url: instavideo2, title: "IntoPadosan" },
+      { url: instavideo3, title: "IntoPadosan" },
+      { url: instavideo4, title: "IntoPadosan" },
+      { url: instavideo5, title: "IntoPadosan" },
+      { url: instavideo6, title: "IntoPadosan" },
+      { url: instavideo7, title: "IntoPadosan" },
+      { url: instavideo8, title: "IntoPadosan" },
+
      
-      // Add more videos as needed
+      // Add more videos 
     ],
   },
 ];
@@ -156,6 +173,7 @@ export const Gallery = () => {
       <div className="gallery-container">
         <div className="options-menu">
           {options.map((option) => (
+            // Mir Niyazul Haque 
             <li
               key={option.id}
               className={selectedOption.id === option.id ? "active" : ""}
@@ -195,3 +213,5 @@ export const Gallery = () => {
     </>
   );
 };
+
+// Code is written by Mir Niyazul Haque
