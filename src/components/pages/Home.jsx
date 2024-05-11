@@ -14,7 +14,7 @@ export const Home = () => {
         <img src={centreImg} alt="logo"></img>
         <div className="text_container">
         <h2 className="img_text">Taste the difference.</h2>
-        <Link to="/menu">
+        <Link to="/FoodChart">
           <button>Order Now</button>
         </Link>
         </div>

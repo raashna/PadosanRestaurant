@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import ExploreMenu from "./ExploreMenu/ExploreMenu";
-export const Menu = () => {
+import ExploreMenu from "./Explore/ExploreMenu";
 
+export const FoodChart = () => {
+  const [category,setCategory] = useState("All");
+  return(
   <>
     
-      <ExploreMenu></ExploreMenu>
+    <ExploreMenu category={category} setCategory={setCategory}/>
   
   </>
+  )
 
 };
