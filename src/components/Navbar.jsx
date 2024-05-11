@@ -7,7 +7,6 @@ import logo from '/logo/padosan_logo.png'
 
 
 export const Navbar = () =>{
-    
     const [menuOpen , setMenuOpen]= useState(false);
     const closeMenu = ()=> {
         setMenuOpen(false);
@@ -32,7 +31,7 @@ export const Navbar = () =>{
             <NavLink to = "/about" onClick={closeMenu}>About</NavLink>
             </li>
             <li>
-            <NavLink to = "/menu" onClick={closeMenu}>Menu</NavLink>
+            <NavLink to = "/FoodChart" onClick={closeMenu}>Menu</NavLink>
             </li>
             <li>
             <NavLink to = "/gallery" onClick={closeMenu}>Gallery</NavLink>
