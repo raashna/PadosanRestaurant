@@ -40,7 +40,7 @@ Install dependencies by running npm install.
 Start the development server by running npm start.
 Open your web browser and visit http://localhost:3000 to view the website.
 ## Contributors
-[Mir Niyazul Haque] - Lead Developer
+[Mir Niyazul Haque]
 
 [Raashna Krishn]
 
