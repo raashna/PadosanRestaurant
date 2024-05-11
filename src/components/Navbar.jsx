@@ -7,7 +7,6 @@ import logo from '/logo/padosan_logo.png'
 
 
 export const Navbar = () =>{
-    
     const [menuOpen , setMenuOpen]= useState(false);
     const closeMenu = ()=> {
         setMenuOpen(false);
