@@ -16,7 +16,7 @@ import menu_15 from './CHILLIES AND MORE veg.png';
 import menu_16 from './CHILLIES AND MORE NON VEG.png';
 import menu_17 from './INDIAN RICE.png';
 import menu_18 from './DAL.png';
-import menu_19 from './Biryani.png';
+import menu_19 from './BIRYANI.png';
 import menu_20 from './INDIAN VEGETABLES (SABJI).png';
 import menu_21 from './PANEER.png';
 import menu_22 from './INDIAN EGG.png';

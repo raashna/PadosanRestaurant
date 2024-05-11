@@ -1,6 +1,6 @@
 .card-container {
-    display:flex;
-    width: 30vw;
+    display: flex;
+    width: 35vw;
     height: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -8,16 +8,18 @@
     text-align: center;
     margin-block: 2px;
     justify-content: space-around;
-    overflow-y:auto;
+    overflow-y: auto;
     box-shadow: black;
     font-family: 'Protest Riot', sans-serif;
 
 }
-.card-title{
+
+.card-title {
     margin-bottom: 2vh;
     font-size: 2vw;
 }
-.card-text{
+
+.card-text {
     margin-bottom: 2vh;
     font-size: 1vw;
     word-wrap: break-word;
@@ -25,7 +27,8 @@
     overflow-wrap: break-word;
     margin-right: 2vw;
 }
-.btn-primary{
+
+.btn-primary {
     background-color: rgb(237, 224, 224);
     font-size: 1vw;
     padding: .5vw 2vw;
@@ -33,7 +36,7 @@
     border-radius: 20px;
     font-weight: 400;
     box-shadow: #eeafaf;
-    
+
 }
 
 .card-img-top {
@@ -43,24 +46,28 @@
     object-fit: cover;
     margin-bottom: 10px;
 }
+
 @media (max-width:600px) {
-    .card-container{
+    .card-container {
         width: 25vw;
-        height: 35vw;
-        padding: 15px;
+        height: 45vw;
+        padding: 5px;
         text-align: center;
-        margin-block: 2px;
+        margin-block: 1px;
     }
+
     .circular-image {
-    width: 15vw;
-    height: 10vw;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 5px;
+        width: 15vw;
+        height: 10vw;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 5px;
     }
+
     .card-container h2 {
         font-size: 3vw;
     }
+
     .card-container p {
         font-size: 2vw;
     }
