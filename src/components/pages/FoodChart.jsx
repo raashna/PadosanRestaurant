@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ExploreMenu from "./Explore/ExploreMenu";
-import FoodDisplay from "../FoodDisplay/foodDisplay";
+import FoodDisplay from "../FoodDisplay/FoodDisplay";
 
 export const FoodChart = () => {
   const [category,setCategory] = useState("All");
