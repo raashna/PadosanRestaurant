@@ -1,0 +1,55 @@
+
+.food-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px;
+    background-color: #fff;
+  }
+  
+  .food-item-info {
+    margin-bottom: 8px;
+  }
+  
+  .food-item-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .food-item-price {
+    color: #888;
+  }
+  
+  .food-item-counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .counter-button-negative {
+    width: 30px;
+    background-color: #f30909;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: 4px 3px;
+    margin: 0 4px;
+  }
+  .counter-button-positive {
+    width: 30px;
+    background-color: #65cf13;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: 4px 3px;
+    margin: 0 4px;
+
+  }
+  
+  .item-count {
+    font-size: 16px;
+    color: #333;
+  }
