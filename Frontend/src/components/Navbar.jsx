@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import logo from '/logo/padosan_logo.png'
 import { Link,NavLink } from "react-router-dom";
-import cart from '/cart.jpg';
+import cartIcon from '/cartIcon.jpg';
 
 export const Navbar = ({setShowLogin}) =>{
     const [menu,setMenu] = useState("");
@@ -21,8 +21,8 @@ export const Navbar = ({setShowLogin}) =>{
             </ul>
     
             <div className="navbar-right">
-                <div className="cart">
-                <Link to="/foodBasketFinal"><img  src={cart} alt="foodBasket" /></Link>
+                <div className="cartIcon">
+                <Link to="/foodBasketFinal"><img  src={cartIcon} alt="foodBasket" /></Link>
                 <div className="dot"></div>
                 </div>
                 <button onClick={()=>setShowLogin(true)}>SignIn</button>

@@ -1,3 +1,5 @@
+
+
 import React, { useContext } from "react";
 import './FoodBasketFinal.css'
 import { food_list } from "../../assests/assets";
@@ -45,7 +47,7 @@ const FoodBasketFinal = () => {
                 <div className="cart-botton">
                     <div className="cart-total">
                         <h2>Cart Total</h2>
-                        <div>
+                        <div className="cart-total-special-box">
                             <div className="cart-total-details">
                                 <p>Subtotal</p>
                                 <p>$ {getTotalCartAmount()}</p>

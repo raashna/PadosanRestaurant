@@ -45,3 +45,20 @@
 .place-order .cart-total button {
     margin-top: 30px;
 }
+
+
+@media (max-width: 600px) {
+    .place-order {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .place-order-left, .place-order-right {
+        max-width: 100%;
+    }
+
+    .place-order-right {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
