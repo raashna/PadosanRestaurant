@@ -1,9 +1,19 @@
-
+.home-heading{
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    font-size: 32px;
+    font-family: 'Protest Riot', sans-serif;
+}
 .venture{
+    margin-top: 15px;
     display: flex;
-    justify-content: space-between;
-    margin: 20px;
+    justify-content: space-evenly;
+    padding:none;
     list-style-type: none;
+    gap:none;
     
 }
 @media (max-width: 600px) {
@@ -13,6 +23,7 @@
     }
     .venture{
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
     }
 

@@ -38,10 +38,28 @@
 
 }
 .footer-social-icon a{
-    width: 40px;
-    margin-right: 15px;
+    width: 60px;
+    margin-right: 10px;
     border-left: 5px;
-    gap: 5px;
+}
+.icon-link-whatsaap{
+    color: green;
+    font-size: 32px;
+}
+.icon-link-fb{
+    color: rgb(84, 84, 218);
+    font-size: 32px;
+}
+.icon-link-insta {
+    color: rgb(203, 18, 157);
+    font-size: 32px;
+}
+.icon-link-phone {
+    color: rgb(48, 152, 130);
+    font-size: 30px;
+}
+.footer-icons{
+    display: flex;
 }
 .footer hr{
     width: 100%;

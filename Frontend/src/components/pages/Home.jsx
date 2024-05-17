@@ -15,7 +15,7 @@ export const Home = () => {
         <Header></Header>
 
       <div>
-        <h2>Our Ventures</h2>
+        <h2 className="home-heading"><center>Our Ventures</center></h2>
         <ul className="venture" typeof="none">
           <li>
             <Card

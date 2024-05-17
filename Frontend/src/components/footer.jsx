@@ -15,18 +15,20 @@ const Footer = () => {
         <div className='footer-content-left'>
           <img src={logo}/>
           <div className="footer-social-icons">
-          <a href={whatsappLink} className="icon-link" target='_blank'>
+            <ul className='footer-icons'>
+          <li><a href={whatsappLink} className="icon-link-whatsaap" target='_blank'>
             <FontAwesomeIcon icon={faWhatsapp} />
-          </a>
-          <a href={facebookLink} className="icon-link" target='_blank'>
+          </a></li>
+          <li><a href={facebookLink} className="icon-link-fb" target='_blank'>
             <FontAwesomeIcon icon={faFacebook} />
-          </a>
-          <a href={instaLink} className="icon-link" target='_blank'>
+          </a></li>
+          <li><a href={instaLink} className="icon-link-insta" target='_blank'>
             <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a href="tel:9430196007" className="icon-link">
+          </a></li>
+          <li><a href="tel:9430196007" className="icon-link-phone">
             <FontAwesomeIcon icon={faPhone} />
-          </a>
+          </a></li>
+          </ul>
           </div>
         </div>
         <div className='footer-content-center'>

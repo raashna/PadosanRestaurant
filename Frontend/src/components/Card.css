@@ -1,7 +1,7 @@
 .card-container {
     display: flex;
-    width: 35vw;
-    height: 100%;
+    width: 300px;
+    height: 550px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
@@ -26,6 +26,7 @@
     overflow: hidden;
     overflow-wrap: break-word;
     margin-right: 2vw;
+    text-align:center;
 }
 
 .btn-primary {
@@ -48,16 +49,19 @@
 }
 
 @media (max-width:600px) {
+    .btn-primary{
+        font-size: 15px;
+    }
     .card-container {
-        width: 25vw;
-        height: 45vw;
+        width: 350px;
+        height: 250px;
         padding: 5px;
         text-align: center;
         margin-block: 1px;
     }
 
     .circular-image {
-        width: 15vw;
+        width: 20vw;
         height: 10vw;
         border-radius: 50%;
         object-fit: cover;
