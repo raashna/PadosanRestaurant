@@ -1,31 +1,34 @@
-
-.navbar{
+.navbar {
     padding: 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #FFE4C9;
+    position: relative;
 }
-.navbar .logo{
+
+.navbar .logo {
     width: 150px;
     height: 80px;
 }
 
-.navbar-menu{
+.navbar-menu {
     display: flex;
     list-style: none;
     gap: 20px;
     color: #49557e;
     font-size: 18px;
-    
 }
-.navbar-right{
+
+.navbar-right {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 35px;
 }
-.navbar button{
-    background: transparent ;
+
+.navbar button {
+    margin-right: 20px;
+    background: transparent;
     font-size: 16px;
     color: #49557e;
     border: 1px solid tomato;
@@ -34,23 +37,29 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.navbar button:hover{
+
+.navbar button:hover {
     background-color: #fff4f2;
 }
-.navbar .active{
+
+.navbar .active {
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
 }
-.navbar li{
+
+.navbar li {
     cursor: pointer;
 }
-.cartIcon{
+
+.cartIcon {
     position: relative;
 }
+
 .cartIcon img {
     height: 30px;
 }
-.cartIcon .dot{
+
+.cartIcon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -61,54 +70,66 @@
 }
 
 
-@media (max-width: 1050px) {
-    .navbar .logo{
-        width: 140px;
-    }
-    .navbar-menu {
-        gap: 20px;
-        font-size: 17px;
-    }
-    .navbar-right{
-        gap: 30px;
-    }
-    .navbar-right img{
-        width: 22px;
-    }
-    .navbar-right button{
-        padding: 8px 25px;;
-    }
-}
-
-@media (max-width: 900px) {
-    .navbar .logo {
-        width: 120px;
-    }
-
-    .navbar-menu {
-        gap: 15px;
-        font-size: 16px;
-    }
-
-    .navbar-right {
-        gap: 20px;
-    }
-
-    .navbar-right img {
-        width: 20px;
-    }
-
-    .navbar-right button {
-        padding: 7px 20px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 750px) {
-
+@media (max-width: 600px) {
     .navbar-menu {
         display: none;
     }
-    
 
+    .navbar .menu {
+        display: block;
+        position: absolute;
+        top: 30px; /* Adjusted value to move down */
+        right: 60px; /* Adjust as needed */
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .navbar .menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin-left: 40px;
+        margin-top: 10px; /* Adjusted to move the lines down */
+        margin-bottom: 5px;
+        background-color: #49557e;
+        transition: 0.3s;
+    }
+
+    .navbar-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #FFE4C9;
+        width: calc(100% - 40px);
+        padding: 20px;
+        gap: 15px;
+        z-index: 3;
+    }
+
+    .navbar-right {
+        position: absolute;
+        top: 50px;
+        right: 100px; /* Adjust to avoid overlap */
+        gap: 15px;
+    }
+
+    .navbar-right button {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    .cartIcon img {
+        height: 25px;
+    }
+
+    /* Ensuring active menu item is highlighted */
+    .navbar-menu a.active,
+    .navbar-menu a:hover {
+        padding-bottom: 2px;
+        border-bottom: 2px solid #49557e;
+    }
 }

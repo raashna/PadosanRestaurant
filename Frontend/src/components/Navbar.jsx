@@ -1,36 +1,41 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from '/logo/padosan_logo.png'
-import { Link,NavLink } from "react-router-dom";
+import logo from '/logo/padosan_logo.png';
+import { NavLink } from "react-router-dom";
 import cartIcon from '/cartIcon.jpg';
 
-export const Navbar = ({setShowLogin}) =>{
-    const [menu,setMenu] = useState("");
-    const activeClass = "active";
+export const Navbar = ({ setShowLogin }) => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
         <nav>
-        <div className="navbar">
-            <img className="logo" src={logo}  alt="logo"></img>
-        
-            <ul className="navbar-menu">
-            <Link to="/" onClick={()=>setMenu("home")} className={menu==="home"?activeClass:""}>Home</Link>
-            <a href="/about" onClick={()=>setMenu("about")} className={menu==="about"?activeClass:""}>About</a>
-            <a href="/foodchart" onClick={()=>setMenu("menu")} className={menu==="menu"?activeClass:""}>Menu</a>
-            <a href="/gallery" onClick={()=>setMenu("gallery")} className={menu==="gallery"?activeClass:""}>Gallery</a>
-            <a href="/contact" onClick={()=>setMenu("contact")} className={menu==="contact"?activeClass:""}>Contact</a>
-            </ul>
-    
-            <div className="navbar-right">
-                <div className="cartIcon">
-                <Link to="/foodBasketFinal"><img  src={cartIcon} alt="foodBasket" /></Link>
-                <div className="dot"></div>
+            <div className="navbar">
+                <img className="logo" src={logo} alt="logo"></img>
+                <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <button onClick={()=>setShowLogin(true)}>SignIn</button>
+                <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+                    <NavLink to="/" onClick={closeMenu} activeClassName="active">Home</NavLink>
+                    <NavLink to="/about" onClick={closeMenu} activeClassName="active">About</NavLink>
+                    <NavLink to="/foodchart" onClick={closeMenu} activeClassName="active">Menu</NavLink>
+                    <NavLink to="/gallery" onClick={closeMenu} activeClassName="active">Gallery</NavLink>
+                    <NavLink to="/contact" onClick={closeMenu} activeClassName="active">Contact</NavLink>
+                </ul>
+                <div className="navbar-right">
+                    <div className="cartIcon">
+                        <NavLink to="/foodBasketFinal"><img src={cartIcon} alt="foodBasket" /></NavLink>
+                        <div className="dot"></div>
+                    </div>
+                    <button onClick={() => setShowLogin(true)}>SignIn</button>
+                </div>
             </div>
-            
-        </div>
         </nav>
-        
-        
-    )
-}
+    );
+};

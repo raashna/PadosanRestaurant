@@ -53,7 +53,7 @@ body{
 }
 .container{
   width: 85%;
-  background: #ce93d8;
+  background: #FFE4C9;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -137,12 +137,16 @@ body{
 .right-side .input-box textarea{
   padding-top: 6px;
 }
+
+
+
+
 .right-side .button{
   display:inline-block;
   margin-top: 12px;
   z-index: 1;
 }
-.button_top {
+button {
     /* Variables */
     --button_radius: 0.75em;
     --button_color: #e8e8e8;
@@ -177,6 +181,22 @@ body{
     /* Push the button downwards when pressed */
     transform: translateY(0);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   .Mapcontainer {
     position: relative;
