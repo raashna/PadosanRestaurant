@@ -22,6 +22,7 @@ export const Navbar = ({ setShowLogin }) => {
                     <span></span>
                 </div>
                 <ul className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+
                     <NavLink to="/" onClick={closeMenu} activeClassName="active">Home</NavLink>
                     <NavLink to="/about" onClick={closeMenu} activeClassName="active">About</NavLink>
                     <NavLink to="/foodchart" onClick={closeMenu} activeClassName="active">Menu</NavLink>
