@@ -27,6 +27,9 @@ import menu_26 from './ROTI.png';
 import menu_27 from './ROTI (NON VEG).png';
 import menu_28 from './TANDOOR(VEG).png';
 import menu_29 from './TANDOOR(Non-Veg).png';
+import logout_icon from './logout_icon.png';
+import bag_icon from './bag_icon.png';
+import profile_icon from './profile_icon.png';
 
 export const assets = {
     menu_1,
@@ -57,7 +60,10 @@ export const assets = {
     menu_26,
     menu_27,
     menu_28,
-    menu_29
+    menu_29,
+    logout_icon,
+    bag_icon,
+    profile_icon
 };
 export const menu_list = [
     {

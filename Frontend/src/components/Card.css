@@ -1,7 +1,7 @@
 .card-container {
     display: flex;
-    width: 300px;
-    height: 550px;
+    width: 350px;
+    height: 800px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
@@ -21,7 +21,7 @@
 
 .card-text {
     margin-bottom: 2vh;
-    font-size: 1vw;
+    font-size: min(2vw,22px);
     word-wrap: break-word;
     overflow: hidden;
     overflow-wrap: break-word;
@@ -54,25 +54,25 @@
     }
     .card-container {
         width: 350px;
-        height: 250px;
+        height: 500px;
         padding: 5px;
         text-align: center;
         margin-block: 1px;
     }
 
     .circular-image {
-        width: 20vw;
-        height: 10vw;
+        width: 30vw;
+        height: 20vw;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 5px;
     }
 
-    .card-container h2 {
-        font-size: 3vw;
+    .card-title {
+        font-size: max(3vw,22px);
     }
 
-    .card-container p {
-        font-size: 2vw;
+    .card-text {
+        font-size: max(2vw, 20px);
     }
 }
