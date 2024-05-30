@@ -1,68 +1,34 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
-import Stripe from "stripe";
+import { newPayment } from "../controllers/payment.js";
+import dotenv from 'dotenv';
 
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
-// placing order from frontend
+dotenv.config();
 
 const placeOrder = async (req, res) => {
     const frontend_url = "http://localhost:5173";
 
     try {
         const newOrder = new orderModel({
+            merchantId: process.env.MERCHANT_ID,
             userId: req.body.userId,
             items: req.body.items,
-            amount:req.body.amount,
-            address: req.body.address
-        })
+            amount: req.body.amount,
+            address: req.body.address,
+            transactionId: req.body.transactionId,
+        });
 
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
-        const line_items = req.body.items.map((item) => ({
-            price_data: {
-                currency: "inr",
-                product_data: {
-                    name: item.name,
-//
-                },
-                unit_amount: item.price * 100 
-            },
-            quantity: item.quantity
-        }))
-        line_items.push({
-            price_data: {
-                currency: "inr",
-                product_data: {
-                    name: "Delivery Charges "
-                },
-                unit_amount: 2 * 100
-            },
-            quantity: 1
-        })
 
-
-        const session = await stripe.checkout.sessions.create({
-            line_items: line_items,
-            mode: 'payment',
-            success_url: `${frontend_url}/verify?success=true&orderId = ${newOrder._id}`,
-            cancel_url: `${frontend_url}/verify?success=false&orderId = ${newOrder._id}`
-        })
-
-        res.json({ success: true, session_url: session.url })
+        // Call the newPayment function to initiate PhonePe payment
+        const paymentUrl = await newPayment(req, res);
+        
+        res.json({ success: true, paymentUrl });
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:"Error"})
+        res.json({ success: false, message: "Error" });
     }
-
-
 }
 
-
-
-
-const verifyOrde=async(req,res)=>{
-
-}
-
-export { placeOrder, verifyOrde}
+export { placeOrder };
