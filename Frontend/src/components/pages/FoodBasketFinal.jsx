@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import './FoodBasketFinal.css'
-import { food_list } from "../../assests/assets";
+import {food_list} from "../../assests/assets";
 import { StoreContext } from "../StoreContext";
 import { Link } from 'react-router-dom';
 

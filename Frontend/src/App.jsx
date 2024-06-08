@@ -10,6 +10,7 @@ import Login_popup from "./components/pages/Login_popup";
 import Header from "./components/Header";
 import PlaceOrder from "./components/pages/PlaceOrder";
 import FoodBasketFinal from "./components/pages/FoodBasketFinal";
+import Verify from "./components/pages/verify/Verify";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/header" element={<Header />} />
           <Route path="/FoodBasketFinal" element={<FoodBasketFinal/>} />
           <Route path="/PlaceOrder" element={<PlaceOrder/>} />
+          <Route path='/Verify' element={<Verify/>}/>
         </Routes>
       </div>
       
