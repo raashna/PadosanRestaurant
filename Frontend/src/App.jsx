@@ -10,6 +10,9 @@ import Login_popup from "./components/pages/Login_popup";
 import Header from "./components/Header";
 import PlaceOrder from "./components/pages/PlaceOrder";
 import FoodBasketFinal from "./components/pages/FoodBasketFinal";
+import Verify from "./components/pages/verify/verify"
+import MyOrders from "./components/pages/MyOrders/MyOrders";
+
 
 
 function App() {
@@ -40,6 +43,8 @@ function App() {
           <Route path="/header" element={<Header />} />
           <Route path="/FoodBasketFinal" element={<FoodBasketFinal/>} />
           <Route path="/PlaceOrder" element={<PlaceOrder/>} />
+          <Route path="/varify" element={<Verify/>}/>
+          <Route path="/Myoders"element={<MyOrders/>}/>
         </Routes>
       </div>
       

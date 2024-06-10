@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './PlaceOrder.css';
+import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../StoreContext';
 import axios from 'axios';
 
@@ -15,6 +16,16 @@ const PlaceOrder = () => {
         zipcode: "",
         phone: ""
     });
+
+    const navigat = useNavigate()
+    useEffect(() => {
+        if (!token) {
+            navigat('/FoodBasketFinal')
+
+        } else if (getTotalCartAmount() === 0) {
+            navigat('/FoodBasketFinal')
+        }
+    }, [token])
 
     const onChangeHandler = (event) => {
         const name = event.target.name;
@@ -37,7 +48,7 @@ const PlaceOrder = () => {
             items: orderItems,
             amount: getTotalCartAmount() + 20,
             MUID: "MUID" + Date.now(),
-            transactionId: "MT" + Date.now() 
+            transactionId: "MT" + Date.now() // Or generate this in your backend
         };
 
         try {
@@ -53,6 +64,10 @@ const PlaceOrder = () => {
             console.error("Error placing order", error);
             alert("An error occurred while placing the order. Please try again.");
         }
+        //
+      
+
+        //
     };
 
     return (
@@ -60,19 +75,19 @@ const PlaceOrder = () => {
             <div className='place-order-left'>
                 <p className='title'>Delivery Information</p>
                 <div className="multi-fields">
-                    <input name='firstName' onChange={onChangeHandler} value={data.firstName} type="text" placeholder='First Name' />
-                    <input name='lastName' onChange={onChangeHandler} value={data.lastName} type="text" placeholder='Last Name' />
+                    <input required name='firstName' onChange={onChangeHandler} value={data.firstName} type="text" placeholder='First Name' />
+                    <input required name='lastName' onChange={onChangeHandler} value={data.lastName} type="text" placeholder='Last Name' />
                 </div>
-                <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email address' />
-                <input name='street' onChange={onChangeHandler} value={data.street} type="text" placeholder='Street' />
+                <input required name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email address' />
+                <input required name='street' onChange={onChangeHandler} value={data.street} type="text" placeholder='Street' />
                 <div className="multi-fields">
-                    <input name='city' onChange={onChangeHandler} value={data.city} type="text" placeholder='City' />
-                    <input name='state' onChange={onChangeHandler} value={data.state} type="text" placeholder='State' />
+                    <input required name='city' onChange={onChangeHandler} value={data.city} type="text" placeholder='City' />
+                    <input required name='state' onChange={onChangeHandler} value={data.state} type="text" placeholder='State' />
                 </div>
                 <div className="multi-fields">
-                    <input name='zipcode' onChange={onChangeHandler} value={data.zipcode} type="text" placeholder='Zip Code' />
+                    <input required name='zipcode' onChange={onChangeHandler} value={data.zipcode} type="text" placeholder='Zip Code' />
                 </div>
-                <input name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Phone'></input>
+                <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Phone'></input>
             </div>
             <div className="place-order-right">
                 <div className="cart-total">
@@ -85,12 +100,12 @@ const PlaceOrder = () => {
                         <hr />
                         <div className="cart-total-details">
                             <p>Delivery Fee</p>
-                            <p>$ {20}</p>
+                            <p>$ {0}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Total</p>
-                            <p>$ {getTotalCartAmount() + 20}</p>
+                            <p>$ {getTotalCartAmount()}</p>
                         </div>
                     </div>
                     <button type='submit'>Proceed to PAYMENT</button>

@@ -6,6 +6,7 @@ import cartIcon from '/cartIcon.jpg';
 import { StoreContext } from "./StoreContext";
 import { assets } from "../assests/assets";
 
+
 export const Navbar = ({ setShowLogin }) => {
     const [menuOpen, setMenuOpen] = useState(false);
     
@@ -47,7 +48,7 @@ export const Navbar = ({ setShowLogin }) => {
                     :<div className="navbar-profile">
                         <img src={assets.profile_icon} alt="" />
                         <ul className="navbar-profile-dropdown">
-                            <li><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
+                            <li onClick={()=>navigate("/MyOrders")}><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
                             <hr />
                             <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>logout</p></li>
                         </ul>
