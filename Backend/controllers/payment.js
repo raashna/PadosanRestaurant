@@ -4,11 +4,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const frontend_url = 'http://localhost:5173/';
+const frontend_url = 'http://localhost:5174/';
 const MERCHANT_ID = process.env.MERCHANT_ID;
 const SALT_KEY = process.env.SALT_KEY;
 const API_KEY = "YOUR_API_KEY"; 
 const PG_PAY_API_URL = 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay';
+
+
 const newPayment = async (req, res) => {
     const maxRetries = 5;
     const baseDelay = 500; // Starting delay in milliseconds
@@ -20,7 +22,7 @@ const newPayment = async (req, res) => {
                 merchantTransactionId: req.body.transactionId,
                 amount: req.body.amount * 100,
                 merchantUserId: req.body.userId,
-                redirectUrl: `${frontend_url}/verify?success=true`, //to redirect to verify page if successful payment is done.
+                redirectUrl: `${frontend_url}verify`, //to redirect to verify page if successful payment is done.
                 redirectMode: 'REDIRECT',
                 callbackUrl: `http://localhost:4000/api/callback`,
                 paymentInstrument: {

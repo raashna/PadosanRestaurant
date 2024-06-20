@@ -8,6 +8,15 @@
     width: max(10%,80px);
 }
 
-.navbar .profile{
+.navbar .logout{
     width: 40px;
+}
+
+.right_pannel{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 4px;
+    outline: 2px solid white;
 }

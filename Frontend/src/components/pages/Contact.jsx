@@ -3,9 +3,6 @@ import "./Contact.css";
 import telephone from "/telephone.webp";
 import  { useRef } from "react";
 import emailjs from "@emailjs/browser";
-
-
-
 export const Contact = () => {
   const form = useRef();
 
@@ -78,7 +75,7 @@ export const Contact = () => {
                   <input type="text" name="user_email" placeholder="Enter your email"  />
                 </div>
                 <div className="input-box message-box">
-                  {/* You can add a textarea here for the message */}
+                  {}
                   <textarea name="message"  placeholder="Enter your message"></textarea>
                 </div>
                 <button type="submit">

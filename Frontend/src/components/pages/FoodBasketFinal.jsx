@@ -55,12 +55,12 @@ const FoodBasketFinal = () => {
                             <hr />
                             <div className="cart-total-details">
                                 <p>Delivery Fee</p>
-                                <p>$ {20}</p>
+                                <p>$ {0}</p>
                             </div>
                             <hr />
                             <div className="cart-total-details">
                                 <p>Total</p>
-                                <p>$ {getTotalCartAmount() + 20}</p>
+                                <p>$ {getTotalCartAmount() }</p>
                             </div>
 
                         </div>

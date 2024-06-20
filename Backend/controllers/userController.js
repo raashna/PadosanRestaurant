@@ -1,12 +1,13 @@
 import userModel from "../models/userModel.js";
 import jwt from "jsonwebtoken"
-import bcrypt from "bcrypt"
+import bcrypt, { compare } from "bcrypt"
 import validator from "validator"
+import dotenv from 'dotenv';
 
 
 // login user
 const loginUser = async (req,res) => {
-    const {email,password} = req.body;
+    const {email,password,userType, secretKey} = req.body;
     try {
         const user = await userModel.findOne({email});
 
@@ -20,8 +21,14 @@ const loginUser = async (req,res) => {
             return res.json({success:false,message:"Invalid credentials"})
         }
 
+        if (user.userType === "Admin" ) {
+            if(secretKey !== process.env.SECRET_KEY || email !== process.env.ADMIN_MAIL){
+                return res.json({ success: false, message: "Invalid Admin Secret Key" });
+            }
+        }
+
         const token = createToken(user._id);
-        res.json({success:true,token})
+        res.json({success:true,token, userType: user.userType})
     } catch (error) {
         console.log(error);
         res.json({success:false,message:"Error"})
@@ -34,7 +41,7 @@ const createToken = (id) => {
 
 // register user
 const registerUser = async (req,res) => {
-    const {name,password,email} = req.body;
+    const {name,password,email,userType, secretKey} = req.body;
     try{
         //checking if user already exists
         const exists = await userModel.findOne({email});
@@ -50,6 +57,11 @@ const registerUser = async (req,res) => {
         if (password.length<8){
             return res.json({success:false,message:"Please enter a strong password"})
         }
+        //checking if valid admin
+        if (userType === "Admin" && secretKey !== process.env.SECRET_KEY) {
+            return res.json({ success: false, message: "Invalid Admin Secret Key" });
+        }
+        
 
         // hashing user password
         const salt = await bcrypt.genSalt(10)
@@ -58,17 +70,18 @@ const registerUser = async (req,res) => {
         const newUser = new userModel({
             name:name,
             email:email,
-            password:hashedPassword
-        })
+            password:hashedPassword,
+            userType: userType,
+        });
 
         const user = await newUser.save()
         const token = createToken(user._id)
-        res.json({success:true,token});
+        res.json({success:true,token, userType: user.userType});
 
     } catch (error) {
         console.log(error);
         res.json({success:false,message:"Error"})
     }
-}
+};
 
 export {loginUser,registerUser};
