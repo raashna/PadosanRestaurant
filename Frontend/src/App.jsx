@@ -10,7 +10,7 @@ import Login_popup from "./components/pages/Login_popup";
 import Header from "./components/Header";
 import PlaceOrder from "./components/pages/PlaceOrder";
 import FoodBasketFinal from "./components/pages/FoodBasketFinal";
-import Verify from "./components/pages/verify/verify"
+import Verify from "./components/pages/verify/verify";
 import MyOrders from "./components/pages/MyOrders/MyOrders";
 
 
@@ -42,7 +42,7 @@ function App() {
           <Route path="/header" element={<Header />} />
           <Route path="/FoodBasketFinal" element={<FoodBasketFinal/>} />
           <Route path="/PlaceOrder" element={<PlaceOrder/>} />
-          <Route path="/verify" element={<Verify/>}/>
+          <Route path="/verify" element={<Verify />} />
           <Route path="/myorders"element={<MyOrders/>}/>
           <Route path="/gallery/:section?" component={Gallery} />
         </Routes>

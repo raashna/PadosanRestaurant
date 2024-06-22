@@ -69,6 +69,24 @@ import padosan17 from "/xyz/padosan/padosan17.jpg"
 import padosan18 from "/xyz/padosan/padosan18.jpg"
 import padosan19 from "/xyz/padosan/padosan19.jpg"
 
+// for titiksha 
+import titiksha1 from "/xyz/titiksha/titiksha1.jpeg";
+import titiksha2 from "/xyz/titiksha/titiksha2.jpeg";
+import titiksha3 from "/xyz/titiksha/titiksha3.jpeg";
+import titiksha4 from "/xyz/titiksha/titiksha4.jpeg";
+import titiksha5 from "/xyz/titiksha/titiksha5.jpeg";
+import titiksha6 from "/xyz/titiksha/titiksha6.jpeg";
+import titiksha7 from "/xyz/titiksha/titiksha7.jpeg";
+import titiksha8 from "/xyz/titiksha/titiksha8.jpeg";
+import titiksha9 from "/xyz/titiksha/titiksha9.jpeg";
+import titiksha10 from "/xyz/titiksha/titiksha10.jpeg";
+import titiksha11 from "/xyz/titiksha/titiksha11.jpeg";
+import titiksha12 from "/xyz/titiksha/titiksha12.jpeg";
+import titiksha13 from "/xyz/titiksha/titiksha13.jpeg";
+import titiksha14 from "/xyz/titiksha/titiksha14.jpeg";
+
+import titiksha16 from "/xyz/titiksha/titiksha16.jpeg";
+
 
 const options = [
   
@@ -153,14 +171,23 @@ const options = [
     id: "4",
     name: "Titiksha",
     images: [
-      "https://i.pinimg.com/236x/5e/98/7a/5e987a932348036c8bf85d0b0fe9f632.jpg",
-      "https://i.pinimg.com/236x/27/4e/ef/274eeff56d51428f4665143181819825.jpg",
-      "https://i.pinimg.com/236x/8e/4d/6c/8e4d6c58c162f2fcf1bb1f1367856bf1.jpg",
-      "https://i.pinimg.com/236x/66/ca/68/66ca68c162dcd2338f893241c0d44c3e.jpg",
-      "https://i.pinimg.com/236x/cd/66/ac/cd66aca8b44d45f9716614aa93a31362.jpg",
-      "https://i.pinimg.com/236x/e0/68/a7/e068a756e003586336efb8bf6bb359cd.jpg",
-      "https://i.pinimg.com/236x/5e/98/7a/5e987a932348036c8bf85d0b0fe9f632.jpg",
-      "https://i.pinimg.com/236x/27/4e/ef/274eeff56d51428f4665143181819825.jpg",
+      titiksha1,
+      titiksha2,
+      titiksha3,
+      titiksha4,
+      titiksha5,
+      titiksha6,
+      titiksha7,
+      titiksha8,
+      titiksha9,
+      titiksha10,
+      titiksha11,
+      titiksha12,
+      titiksha13,
+      titiksha14,
+  
+      titiksha16,
+
     ],
   },
 

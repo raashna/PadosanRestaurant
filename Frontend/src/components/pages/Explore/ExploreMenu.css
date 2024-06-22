@@ -1,84 +1,94 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Body */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
 .explore-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    text-align: center;
-  }
-  
-  
-  .explore-menu h1 {
-    color: #262626;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .explore-menu p {
-    max-width: 80%;
-    color: #808080;
-  }
-  
-  .explore-menu-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* Ensure items stay in a single row */
-    gap: 20px;
-    align-items: center;
-    margin: 20px 0px;
-    text-align: center;
-    overflow-x: scroll; /* Allow horizontal scrolling */
-    width: 100%;
-    max-width: calc(140px * 8 + 20px * 7); /* Adjust based on item size and gap */
-  }
-  .explore-menu-list::-webkit-scrollbar {
-    display:none;
-    }
-  
-  .explore-menu-list-item {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .explore-menu-list-item img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
-  }
-  
-  .explore-menu-list-item p {
-    margin-top: 10px;
-    color: #170202;
-    font-size: 1.2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .explore-menu hr {
-    width: 80%; 
-    margin: 10px 0;
-    height: 2px;
-    background-color: #e2e2e2;
-    border: none;
-    align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.explore-menu p {
+  max-width: 80%;
+  color: #808080;
+}
+
+.explore-menu-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; 
+  gap: 20px;
+  align-items: center;
+  margin: 20px 0px;
+  text-align: center;
+  overflow-x: auto; 
+  width: 100%;
+  max-width: calc(140px * 8 + 20px * 7);
+  scrollbar-width: thin;
+  scrollbar-color: #808080 #f7f7f7;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+  width: 8px; /* Width of scrollbar */
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+  background-color: #808080; /* Color of scrollbar thumb */
+  border-radius: 20px; /* Roundness of scrollbar thumb */
+}
+
+.explore-menu-list::-webkit-scrollbar-track {
+  background-color: #f7f7f7; 
+}
+
+.explore-menu-list-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explore-menu-list-item img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #170202;
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  text-align: center;
+}
+
+.explore-menu hr {
+  width: 80%; 
+  margin: 10px 0;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+  align-self: center;
 }
 
 .explore-menu-list-item .active {

@@ -6,6 +6,24 @@
     background-color: #00000090;
     display: grid;
 }
+.optioning_user {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin: 20px 0;
+}
+
+.optioning_user label {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.optioning_user span {
+    font-weight: bold;
+    margin-right: 10px; 
+}
+
 .login-popup-container{
     place-self: center;
     width: max(23 vw,330 px);

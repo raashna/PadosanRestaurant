@@ -17,7 +17,7 @@ const FoodItem = ({ id, name, price }) => {
         <div className='food-item'>
             <div className='food-item-info'>
                 <div className='food-item-name'>{name}</div>
-                <div className='food-item-price'>Price: ${price}</div>
+                <div className='food-item-price'>Price: Rs {price}</div>
             </div>
 
             <div className='food-item-counter'>

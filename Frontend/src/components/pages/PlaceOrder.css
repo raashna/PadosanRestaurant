@@ -38,6 +38,7 @@
 }
 
 .place-order-right {
+  padding-right: 20px;
     width: 100%;
     max-width: max(40%, 500px);
 }

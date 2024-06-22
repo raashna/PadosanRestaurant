@@ -3,7 +3,7 @@ import './PlaceOrder.css';
 import { useNavigate } from 'react-router-dom'
 import { StoreContext } from '../StoreContext';
 import axios from 'axios';
-import { validatePhoneNumber, validateCity, validateState } from './formValidation';
+import { validatePhoneNumber, validateCity, validateState, validatePinCode } from './formValidation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const PlaceOrder = () => {
@@ -18,14 +18,26 @@ const PlaceOrder = () => {
         zipcode: "",
         phone: ""
     });
+/*
+    const totalCartAmount = getTotalCartAmount();
+
+    // Check if the total cart amount is greater than 200
+    if (totalCartAmount <= 200) {
+        toast.error("Your cart must have an order above 200");
+        return;
+    }
+*/
     const [errors, setErrors] = useState({});
-    const navigat = useNavigate()
+    const navigate = useNavigate()
     useEffect(() => {
         if (!token) {
-            navigat('/FoodBasketFinal')
+            
+            navigate('/FoodBasketFinal')
+           
 
-        } else if (getTotalCartAmount() === 0) {
-            navigat('/FoodBasketFinal')
+        } else if (getTotalCartAmount() == 0) {
+            navigate('/FoodBasketFinal')
+           
         }
     }, [token])
     const onChangeHandler = (event) => {
@@ -38,11 +50,13 @@ const PlaceOrder = () => {
         newErrors.phone = validatePhoneNumber(data.phone);
         newErrors.city = validateCity(data.city);
         newErrors.state = validateState(data.state);
+        newErrors.pincode = validatePinCode(data.zipcode);
         return newErrors;
     };
 //reminder BOTH are different functions
     const placeOrder = async (event) => {
         event.preventDefault();
+       
         const validationErrors = validateForm();
         setErrors(validationErrors);
         const hasErrors = Object.values(validationErrors).some(error => error !== "");
@@ -62,7 +76,7 @@ const PlaceOrder = () => {
         let orderData = {
             address: data,
             items: orderItems,
-            amount: getTotalCartAmount() + 20,
+            amount: getTotalCartAmount() ,
             MUID: "MUID" + Date.now(),
             transactionId: "MT" + Date.now() // Or generate this in your backend
         };
@@ -110,20 +124,21 @@ const PlaceOrder = () => {
                     <div>
                         <div className="cart-total-details">
                             <p>Subtotal</p>
-                            <p>$ {getTotalCartAmount()}</p>
+                            <p>Rs {getTotalCartAmount()}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Delivery Fee</p>
-                            <p>$ {0}</p>
+                            <p>Rs {0}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Total</p>
-                            <p>$ {getTotalCartAmount()}</p>
+                            <p>Rs {getTotalCartAmount()}</p>
                         </div>
                     </div>
                     <button type='submit'>Proceed to PAYMENT</button>
+                    
 
                 </div>
             </div>

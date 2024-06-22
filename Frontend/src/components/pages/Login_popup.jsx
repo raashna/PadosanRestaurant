@@ -100,23 +100,27 @@ const onLogin = async (event) => {
           <img onClick={()=>setShowLogin(false)} src={cross_icon}></img>
         </div>
         {currState==="Login"?
-        <div>
-          Register As 
-          <input
-           type="radio"
-           name="userType"
-           value= "User"
-           onChange={onUserTypeChange}
-          />
-          User
-          <input
-           type="radio"
-           name="userType"
-           value= "Admin"
-           onChange={onUserTypeChange}
-          />
-          Admin
-        </div>
+        <div className="optioning_user">
+        <span>Register As </span>
+        <label>
+            <input
+                type="radio"
+                name="userType"
+                value="User"
+                onChange={onUserTypeChange}
+            />
+            User
+        </label>
+        <label>
+            <input
+                type="radio"
+                name="userType"
+                value="Admin"
+                onChange={onUserTypeChange}
+            />
+            Admin
+        </label>
+    </div>
         :null}
         {userType==="Admin" && currState==="Login" ?<div className="login-popup-inputs">
           <label>Secret Key</label>

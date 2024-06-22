@@ -11,7 +11,8 @@ const API_KEY = "YOUR_API_KEY";
 const PG_PAY_API_URL = 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay';
 
 
-const newPayment = async (req, res) => {
+const newPayment = async (req, orderId) => {
+    console.log("Received Order ID for Payment:", orderId); // Log the orderId
     const maxRetries = 5;
     const baseDelay = 500; // Starting delay in milliseconds
 
@@ -22,13 +23,15 @@ const newPayment = async (req, res) => {
                 merchantTransactionId: req.body.transactionId,
                 amount: req.body.amount * 100,
                 merchantUserId: req.body.userId,
-                redirectUrl: `${frontend_url}verify`, //to redirect to verify page if successful payment is done.
+                redirectUrl: `${frontend_url}verify?orderId=${orderId}&success=true`,
                 redirectMode: 'REDIRECT',
                 callbackUrl: `http://localhost:4000/api/callback`,
                 paymentInstrument: {
                     type: 'PAY_PAGE'
                 }
             };
+
+            console.log("Constructed Redirect URL:", data.redirectUrl); // Log the constructed redirectUrl
 
             const payload = JSON.stringify(data);
             const payloadMain = Buffer.from(payload).toString('base64');
@@ -52,28 +55,23 @@ const newPayment = async (req, res) => {
 
             const response = await axios.request(options);
             console.log("Payment API Response:", response.data);
-            return res.status(200).json({ success: true, paymentUrl: response.data.data.instrumentResponse.redirectInfo.url });
+            return { success: true, paymentUrl: response.data.data.instrumentResponse.redirectInfo.url };
         } catch (error) {
             if (error.response && error.response.status === 429) {
-                // Too Many Requests - handle rate limiting
-                const delay = baseDelay * Math.pow(2, attempt); // Exponential backoff
+                const delay = baseDelay * Math.pow(2, attempt);
                 console.log(`Rate limit hit, retrying in ${delay}ms...`);
                 await new Promise(resolve => setTimeout(resolve, delay));
             } else {
                 console.error("Error in newPayment:", error);
-                return res.status(500).json({
-                    message: error.message,
-                    success: false
-                });
+                return { success: false, message: error.message };
             }
         }
     }
 
-    res.status(429).json({
-        message: 'Too Many Requests. Please try again later.',
-        success: false
-    });
+    return { success: false, message: 'Too Many Requests. Please try again later.' };
 };
+
+
 
 
 const checkStatus = async (req, res) => {

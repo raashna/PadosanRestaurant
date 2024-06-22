@@ -9,7 +9,8 @@ const orderRouter = express.Router();
 
 orderRouter.post("/place",authMiddleware,placeOrder);
 orderRouter.post("/status/:txnId",checkStatus);
-orderRouter.post("/verify",verifyOrder);
+orderRouter.post("/verify", verifyOrder);
+
 orderRouter.post("/userOrders",authMiddleware,userOrders);
 
 // for admin pannel

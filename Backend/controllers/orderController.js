@@ -2,6 +2,8 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import { newPayment } from "../controllers/payment.js";
 import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+
 
 dotenv.config();
 import twilio from 'twilio';
@@ -9,6 +11,7 @@ import twilio from 'twilio';
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = twilio(accountSid, authToken);
+
 
 const sendWhatsAppNotification = async (order) => {
     try {
@@ -35,6 +38,8 @@ const sendWhatsAppNotification = async (order) => {
 };
 
 
+
+
 const placeOrder = async (req, res) => {
     const frontend_url = "http://localhost:5174";
 
@@ -46,71 +51,79 @@ const placeOrder = async (req, res) => {
             amount: req.body.amount,
             address: req.body.address,
             transactionId: req.body.transactionId,
-           
-            // payment:req.body.payment,
         });
 
         await newOrder.save();
+        const orderId = newOrder._id;
+        console.log("Generated Order ID:", orderId);
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
-        // Call the newPayment function to initiate PhonePe payment
-        const paymentUrl = await newPayment(req, res);
-
-        /*const session = await phonepe.checkout.sessions.create({
-            mode:'payment',
-            success_url:`${frontend_url}/verify?success=true&orderId=${newOrder}`,
-            cancel_url:`${frontend_url}/verify?success=false&orderId=${newOrder}`
-        })*/
+        const paymentResult = await newPayment(req,orderId);
         
-        res.json({ success: true, paymentUrl });
+        if (paymentResult.success) {
+            res.json({ success: true, paymentUrl: paymentResult.paymentUrl });
+        } else {
+            res.json({ success: false, message: paymentResult.message });
+        }
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
     }
-}
+};
 
-const verifyOrder = async (req,res) => {
-    const {userId,success} = req.body;
+
+
+const verifyOrder = async (req, res) => {
+    const { orderId, success } = req.body;
     try {
-        if (success==="true"){
-            await orderModel.findByIdAndUpdate(userId,{payment:true});
-            res.json({success:true,message:"Paid"})
-        }
-        else{
-            await orderModel.findByIdAndDelete(userId);
-            res.json({success:false,message:"Not Paid"})
-        }
-            await sendWhatsAppNotification(newOrder);
+        const objectId = new mongoose.Types.ObjectId(orderId);
+        const order = await orderModel.findById(objectId);  // Retrieve order details
 
-        //  res.json({ success: true, paymentUrl });  //-->(giving error(Multiple request))
+        if (!order) {
+            return res.json({ success: false, message: "Order not found" });
+        }
+
+        if (success === "true") {
+            await orderModel.findByIdAndUpdate(objectId, { payment: true });
+            res.json({ success: true, message: "Paid" });
+           await sendWhatsAppNotification(order);  // Send WhatsApp notification after response
+        } else {
+            await orderModel.findByIdAndDelete(objectId);
+            res.json({ success: false, message: "Not Paid" });
+        }
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
     }
-}
+};
+
 
 
 // User orders to frontend
+// User orders to frontend
 const userOrders = async (req, res) => {
     try {
-        const orders = await orderModel.find({ userId: req.body.userId });
-        res.json({ success: true, data: orders })
+        const orders = await orderModel.find({ userId: req.body.userId }).sort({ date: -1 }); // Sort by date in descending order
+        res.json({ success: true, data: orders });
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error" })
+        res.json({ success: false, message: "Error" });
     }
-}
+};
+
+
 
 // for admin pannel -> Orders list // 
 const listOrders = async (req, res) => {
     try {
-        const orders = await orderModel.find({});
+        const orders = await orderModel.find({ payment: true }).sort({ date: -1 });
         res.json({ success: true, data: orders });
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error" })
+        res.json({ success: false, message: "Error" });
     }
-}
+};
+
 
 
 // update Order Status api
