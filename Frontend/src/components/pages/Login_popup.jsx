@@ -78,7 +78,7 @@ const onLogin = async (event) => {
       localStorage.setItem("token", response.data.token);
       setShowLogin(false);
       if (response.data.userType === "Admin") {
-        window.location.href = "http://localhost:5173";
+        window.location.href = import.meta.env.VITE_ADMIN_URL;
         }
       }else {
         toast.error(response.data.message);

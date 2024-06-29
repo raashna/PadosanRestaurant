@@ -3,7 +3,7 @@ import './Navbar.css'
 import {assets} from '../../assets/assets'
 
 const logout = () => {
-  window.location.href = "http://localhost:5174/";
+  window.location.href = import.meta.env.VITE_FRONTEND;
 }
 
 
