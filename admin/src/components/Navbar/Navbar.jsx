@@ -1,13 +1,16 @@
 import React from 'react'
 import './Navbar.css'
 import {assets} from '../../assets/assets'
-
-const logout = () => {
-  window.location.href = import.meta.env.VITE_FRONTEND;
-}
-
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
+  
   return (
     <div className='navbar'>
       <img className='logo' src={assets.padosan_logo} alt=""/>

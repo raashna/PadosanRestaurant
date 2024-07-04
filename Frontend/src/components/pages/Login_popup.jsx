@@ -13,14 +13,11 @@ import { useNavigate } from "react-router-dom";
 const Login_popup = ({setShowLogin}) =>{
 
   const {url,setToken} = useContext(StoreContext)
-  const [userType, setUsertype] = useState("");
-  const [secretKey,setSecretKey]=useState("");
   const [currState,setCurrState] = useState("Login");
   const [data,setData] = useState({
     name:"",
     email:"",
     password:"",
-    userType:""
   });
   const navigate = useNavigate();
 
@@ -29,11 +26,6 @@ const Login_popup = ({setShowLogin}) =>{
     const value = event.target.value;
     setData(data=>({...data,[name]:value}))
   }
-
-  const onUserTypeChange = (event) => {
-  setUsertype(event.target.value);
-  setData(data => ({ ...data, userType: event.target.value }));
-};
 
   const validateForm = () => {
     const newErrors = {};
@@ -46,16 +38,6 @@ const onLogin = async (event) => {
   event.preventDefault();
   const validationErrors = validateForm();
   const hasErrors = Object.values(validationErrors).some(error => error !== "");
-
-  
-  setData(data => ({ ...data, userType }));
-
-  if (userType==="Admin"){
-    if(secretKey!==import.meta.env.VITE_SECRET_KEY || data.email!==import.meta.env.VITE_ADMIN_MAIL){
-      toast.error("Invalid Admin");
-      return;
-    }
-  }
 
   if (hasErrors) {
       Object.values(validationErrors).forEach(error => {
@@ -72,14 +54,11 @@ const onLogin = async (event) => {
   }
 
   try {
-      const response = await axios.post(newUrl, { ...data, secretKey });
+      const response = await axios.post(newUrl, data);
       if (response.data.success) {
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
       setShowLogin(false);
-      if (response.data.userType === "Admin") {
-        window.location.href = import.meta.env.VITE_ADMIN_URL;
-        }
       }else {
         toast.error(response.data.message);
       }
@@ -99,40 +78,6 @@ const onLogin = async (event) => {
           <h2>{currState}</h2>
           <img onClick={()=>setShowLogin(false)} src={cross_icon}></img>
         </div>
-        {currState==="Login"?
-        <div className="optioning_user">
-        <span>Register As </span>
-        <label>
-            <input
-                type="radio"
-                name="userType"
-                value="User"
-                onChange={onUserTypeChange}
-            />
-            User
-        </label>
-        <label>
-            <input
-                type="radio"
-                name="userType"
-                value="Admin"
-                onChange={onUserTypeChange}
-            />
-            Admin
-        </label>
-    </div>
-        :null}
-        {userType==="Admin" && currState==="Login" ?<div className="login-popup-inputs">
-          <label>Secret Key</label>
-          <input 
-           type="text"
-           name="secretKey"
-           placeholder="Secret Key"
-           onChange={(e) => setSecretKey(e.target.value)}
-           />
-        </div>:null}
-        
-
         <div className="login-popup-inputs">
           {currState==="Login"?<></>:<input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder="Your Name" required/>}
           <input name="email" onChange={onChangeHandler} value={data.email} type="email" placeholder="Your email" required/>
