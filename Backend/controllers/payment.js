@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const frontend_url = 'http://localhost:5174/';
+const frontend_url = process.env.FRONTEND_URL;
 const MERCHANT_ID = process.env.MERCHANT_ID;
 const SALT_KEY = process.env.SALT_KEY;
 const API_KEY = "YOUR_API_KEY"; 
@@ -25,7 +25,7 @@ const newPayment = async (req, orderId) => {
                 merchantUserId: req.body.userId,
                 redirectUrl: `${frontend_url}verify?orderId=${orderId}&success=true`,
                 redirectMode: 'REDIRECT',
-                callbackUrl: `http://localhost:4000/api/callback`,
+                callbackUrl: process.env.BACKEND_URL`/api/callback`,
                 paymentInstrument: {
                     type: 'PAY_PAGE'
                 }

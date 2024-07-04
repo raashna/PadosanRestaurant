@@ -41,7 +41,7 @@ const sendWhatsAppNotification = async (order) => {
 
 
 const placeOrder = async (req, res) => {
-    const frontend_url = "http://localhost:5174";
+    const frontend_url = process.env.FRONTEND_URL;
 
     try {
         const newOrder = new orderModel({
