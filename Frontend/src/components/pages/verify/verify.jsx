@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { StoreContext } from "../../StoreContext";
 import axios from "axios";
 const Verify = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
   const frontend_url= import.meta.env.VITE_FRONTEND_URL
@@ -17,7 +17,7 @@ const Verify = () => {
       orderId,
     });
     if (response.data.success) {
-      navigate("/myorders");
+      navigate("/myorders", { replace: true });
     } else {
       navigate("/");
     }
