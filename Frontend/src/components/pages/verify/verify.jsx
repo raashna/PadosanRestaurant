@@ -17,7 +17,7 @@ const Verify = () => {
       orderId,
     });
     if (response.data.success) {
-      navigate(`${frontend_url}/myorders`);
+      navigate("/myorders");
     } else {
       navigate("/");
     }
