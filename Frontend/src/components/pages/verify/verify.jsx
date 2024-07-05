@@ -7,7 +7,7 @@ const Verify = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-
+  const frontend_url= import.meta.env.VITE_FRONTEND_URL
   console.log(success, orderId);
   const navigate = useNavigate();
   const { url } = useContext(StoreContext);
@@ -17,7 +17,7 @@ const Verify = () => {
       orderId,
     });
     if (response.data.success) {
-      navigate("/myorders");
+      navigate(`${frontend_url}/myorders`);
     } else {
       navigate("/");
     }
