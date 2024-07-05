@@ -26,7 +26,6 @@ const App = () => {
 const ProtectedRoutes = ({ url }) => {
   // Check if the user is authenticated
   const isAuthenticated = !!localStorage.getItem('token'); // Example check, you can use a better auth check
-
   return isAuthenticated ? (
     <>
       <Navbar />
