@@ -3,42 +3,38 @@ import userModel from "../models/userModel.js";
 import { newPayment } from "../controllers/payment.js";
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import nodemailer from 'nodemailer';
 
 
-dotenv.config();
-import twilio from 'twilio';
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+        user: process.env.SENDER_NODEMAILER,
+        pass: process.env.APP_PASSWORD,
+    },
+});
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = twilio(accountSid, authToken);
+const sendMail = async (order) => {
+    const mailOptions = {
+        from: {
+            name: 'Padosan Restaurant',
+            address: process.env.SENDER_NODEMAILER,
+        },
+        to: ["welcomethepadosan@gmail.com","krishndhwani@gmail.com"], 
+        subject: "Order Confirmation",
+        text: `Your order with ID ${order._id} has been confirmed.`,
+        html: `<b>Your order with ID ${order._id} has been confirmed.</b>`,
+    };
 
-
-const sendWhatsAppNotification = async (order) => {
     try {
-     
-        const message = `
-        
-            A new order has been placed.
-            Order ID: ${order._id}
-            User ID: ${order.userId}
-            Amount: ${order.amount}
-            Items: ${order.items.map(item => `${item.name} (Qty: ${item.quantity})`).join(', ')}
-            Kindly check the admin panel for more details.`;
-            await client.messages.create({
-            body: message,
-            from: process.env.TWILIO_WHATSAPP_NUMBER,
-            to: process.env.MY_PHONE_NUMBER
-             
-        });
-
-        console.log('SMS notification sent successfully');
+        await transporter.sendMail(mailOptions);
+        console.log("Email Sent");
     } catch (error) {
-        console.error('Error sending SMS notification:', error);
+        console.log("Error sending email:", error);
     }
 };
-
-
-
 
 const placeOrder = async (req, res) => {
     const frontend_url = process.env.FRONTEND_URL;
@@ -86,7 +82,7 @@ const verifyOrder = async (req, res) => {
         if (success === "true") {
             await orderModel.findByIdAndUpdate(objectId, { payment: true });
             res.json({ success: true, message: "Paid" });
-           await sendWhatsAppNotification(order);  // Send WhatsApp notification after response
+            await sendMail(order);
         } else {
             await orderModel.findByIdAndDelete(objectId);
             res.json({ success: false, message: "Not Paid" });

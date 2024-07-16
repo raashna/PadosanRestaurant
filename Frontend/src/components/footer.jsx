@@ -46,6 +46,12 @@ const Footer = () => {
             <li>Email: welcomethepadosan@gmail.com</li>
           </ul>
         </div>  
+        <div className='footer-content-right'>
+          <h2>Our Privacy  Policies</h2>
+          <a href="https://drive.google.com/file/d/1ft6s8636_00irtwrBsx6Ix0qQK868ZrH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="privacy-policy-link">
+    Privacy Policy
+  </a>
+        </div>
       </div>
       <hr/>
       <p className='footer-copyright'>&copy; 2024 The Padosan.com - All Right Reserved</p>

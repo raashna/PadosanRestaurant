@@ -31,9 +31,10 @@ const PlaceOrder = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (!token) {
-            
-            navigate('/FoodBasketFinal')
-           
+            toast.error("Please Sign in.");
+            setTimeout(() => {
+                navigate('/FoodBasketFinal');
+            }, 2000); 
 
         } else if (getTotalCartAmount() == 0) {
             navigate('/FoodBasketFinal')
