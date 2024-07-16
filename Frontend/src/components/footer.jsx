@@ -48,7 +48,7 @@ const Footer = () => {
         </div>  
         <div className='footer-content-right'>
           <h2>Our Privacy  Policies</h2>
-          <a href="https://drive.google.com/file/d/1ft6s8636_00irtwrBsx6Ix0qQK868ZrH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="privacy-policy-link">
+          <a href="https://drive.google.com/file/d/1cVF17vKlcJFjUr-NNlDjwV4SVwA2-OJz/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="privacy-policy-link">
     Privacy Policy
   </a>
         </div>

@@ -56,6 +56,7 @@ export const Contact = () => {
                 <i className="fas fa-envelope"></i>
                 <div className="topic">Email</div>
                 <div className="text-one">welcomethepadosan@gmail.com</div>
+                 <div className="text-one">MS Hotel Titiksha</div>
               
               </div>
             </div>
