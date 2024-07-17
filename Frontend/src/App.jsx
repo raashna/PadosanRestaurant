@@ -4,7 +4,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { About, Contact, Gallery, Home, FoodChart } from "./components/pages";
 import Popup from "./components/popup";
-import Footer from "./components/footer";
+import Footer from "./components/footer"; 
 import {Helmet} from "react-helmet";
 import Login_popup from "./components/pages/Login_popup";
 import Header from "./components/Header";
@@ -12,6 +12,7 @@ import PlaceOrder from "./components/pages/PlaceOrder";
 import FoodBasketFinal from "./components/pages/FoodBasketFinal";
 import Verify from "./components/pages/verify/verify";
 import MyOrders from "./components/pages/MyOrders/MyOrders";
+import PrivacyPolicy from './components/pages/PrivacyPolicy.jsx';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders"element={<MyOrders/>}/>
           <Route path="/gallery/:section?" component={Gallery} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </div>
       
