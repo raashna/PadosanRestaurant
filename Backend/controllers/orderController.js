@@ -1,6 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
-import { newPayment } from "../controllers/payment.js";
+import { newPayment,checkStatus } from "../controllers/payment.js";
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
@@ -78,7 +78,11 @@ const verifyOrder = async (req, res) => {
         if (!order) {
             return res.json({ success: false, message: "Order not found" });
         }
-
+        const paymentStatus = await checkStatus({ params: { transactionId: order.transactionId } }, res);
+        if (!paymentStatus.success) {
+            await orderModel.findByIdAndDelete(objectId);
+            return res.json({ success: false, message: "Payment not successful" });
+        }
         if (success === "true") {
             await orderModel.findByIdAndUpdate(objectId, { payment: true });
             res.json({ success: true, message: "Paid" });
@@ -99,7 +103,7 @@ const verifyOrder = async (req, res) => {
 // User orders to frontend
 const userOrders = async (req, res) => {
     try {
-        const orders = await orderModel.find({ userId: req.body.userId }).sort({ date: -1 }); // Sort by date in descending order
+        const orders = await orderModel.find({ userId: req.body.userId, payment: true }).sort({ date: -1 });  // Sort by date in descending order
         res.json({ success: true, data: orders });
     } catch (error) {
         console.log(error);
