@@ -9,7 +9,8 @@ const backend_url = process.env.BACKEND_URL;
 const MERCHANT_ID = process.env.MERCHANT_ID;
 const SALT_KEY = process.env.SALT_KEY;
 const API_KEY = "YOUR_API_KEY"; 
-const PG_PAY_API_URL = 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay';
+const PG_PAY_API_URL = 'https://api.phonepe.com/apis/hermes/pg/v1/pay';
+
 
 
 const newPayment = async (req, orderId) => {
@@ -87,7 +88,8 @@ const checkStatus = async (req, res) => {
 
         const options = {
             method: 'GET',
-            url: `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/${merchantId}/${merchantTransactionId}`,
+            url: `https://api.phonepe.com/apis/hermes/pg/v1/status/${merchantId}/${merchantTransactionId}`,
+
             headers: {
                 accept: 'application/json',
                 'Content-Type': 'application/json',

@@ -21,15 +21,15 @@ const Verify = () => {
       });
       
       if (response.data.success) {
-        toast.success("Order confirmed successfully!", { autoClose: 10000 }); // Show for 10 seconds
-        setTimeout(() => navigate("/myorders"), 3000); // Delay navigation by 10 seconds
+        toast.success("Order confirmed successfully!", { autoClose: 30000 }); // Show for 10 seconds
+        setTimeout(() => navigate("/myorders"), 6000); // Delay navigation by 10 seconds
       } else {
-        toast.error("Order failed. Please try again.", { autoClose: 20000 }); // Show for 10 seconds
-        setTimeout(() => navigate("/"), 3000); // Delay navigation by 10 seconds
+        toast.error("Order failed. Please try again.", { autoClose: 30000 }); // Show for 10 seconds
+        setTimeout(() => navigate("/"), 6000); // Delay navigation by 10 seconds
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.", { autoClose: 20000 }); // Show for 10 seconds
-      setTimeout(() => navigate("/"), 3000); // Delay navigation by 10 seconds
+      toast.error("An error occurred. Please try again.", { autoClose: 30000 }); // Show for 10 seconds
+      setTimeout(() => navigate("/"), 6000); // Delay navigation by 10 seconds
     }
   };
   useEffect(() => {
