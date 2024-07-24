@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const FoodBasketFinal = () => {
     const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
     const isCartTotalValid = () => {
-        return getTotalCartAmount() > 2;
+        return getTotalCartAmount() > 200;
     };
 
     // Function to display a toast message
