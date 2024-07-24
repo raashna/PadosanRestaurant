@@ -1,6 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
-import { newPayment } from "../controllers/payment.js";
+import { newPayment,checkStatus } from "../controllers/payment.js";
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import nodemailer from 'nodemailer';
@@ -80,9 +80,15 @@ const verifyOrder = async (req, res) => {
         }
         
         if (success === "true") {
-            await orderModel.findByIdAndUpdate(objectId, { payment: true });
-            res.json({ success: true, message: "Paid" });
-            await sendMail(order);
+            
+            const paymentStatus = await checkStatus({ body: { transactionId: order.transactionId } });
+            if (paymentStatus.success) {
+                await orderModel.findByIdAndUpdate(objectId, { payment: true });
+                res.json({ success: true, message: "Paid" });
+                await sendMail(order);
+            } else {
+                res.json({ success: false, message: "Payment verification failed" });
+            }
         } else {
             await orderModel.findByIdAndDelete(objectId);
             res.json({ success: false, message: "Not Paid" });

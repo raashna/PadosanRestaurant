@@ -75,11 +75,9 @@ const newPayment = async (req, orderId) => {
 };
 
 
-
-
 const checkStatus = async (req, res) => {
     try {
-        const merchantTransactionId = req.params.transactionId;
+        const merchantTransactionId =  res.req.body.transactionId
         const merchantId = MERCHANT_ID;
         const keyIndex = 1;
         const string = `/pg/v1/status/${merchantId}/${merchantTransactionId}` + SALT_KEY;
@@ -89,11 +87,11 @@ const checkStatus = async (req, res) => {
         const options = {
             method: 'GET',
             url: `https://api.phonepe.com/apis/hermes/pg/v1/status/${merchantId}/${merchantTransactionId}`,
-
             headers: {
                 accept: 'application/json',
                 'Content-Type': 'application/json',
-                'X-VERIFY': checksum
+                'X-VERIFY': checksum,
+                'X-MERCHANT-ID':`${merchantId}`
             }
         };
 
