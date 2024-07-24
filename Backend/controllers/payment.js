@@ -77,7 +77,7 @@ const newPayment = async (req, orderId) => {
 
 const checkStatus = async (req, res) => {
     try {
-        const merchantTransactionId =  res.req.body.transactionId
+        const merchantTransactionId = req.body.transactionId
         const merchantId = MERCHANT_ID;
         const keyIndex = 1;
         const string = `/pg/v1/status/${merchantId}/${merchantTransactionId}` + SALT_KEY;
@@ -99,16 +99,13 @@ const checkStatus = async (req, res) => {
         console.log("Check Status API Response:", response.data);
 
         if (response.data.success === true) {
-            return res.json({ success: true });
+            return { success: true };
         } else {
-            return res.json({ success: false });
+            return { success: false, message: response.data.message };
         }
     } catch (error) {
         console.error("Error in checkStatus:", error);
-        res.status(500).json({
-            message: error.message,
-            success: false
-        });
+        return { success: false, message: error.message };
     }
 };
 
