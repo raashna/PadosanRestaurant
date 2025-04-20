@@ -36,6 +36,7 @@ import instavideo5 from '/videos/Reelvideo5.mp4';
 import instavideo6 from '/videos/Reelvideo6.mp4';
 import instavideo7 from '/videos/Reelvideo7.mp4';
 import instavideo8 from '/videos/Reelvideo8.mp4';
+import instavideo9 from '/videos/Reelvideo9.mp4';
 
 import Atithi1 from "/xyz/atithi/Atithi1.jpg";
 import Atithi2 from "/xyz/atithi/Atithi2.jpg";
@@ -204,7 +205,8 @@ const options = [
       { url: instavideo6, title: "IntoPadosan" },
       { url: instavideo7, title: "IntoPadosan" },
       { url: instavideo8, title: "IntoPadosan" },
-
+      { url: instavideo9, title: "IntoPadosan" },
+      
      
       // Add more videos 
     ],
