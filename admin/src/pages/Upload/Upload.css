@@ -1,0 +1,24 @@
+.upload-container{
+    border-radius: 20%;
+    border: 2px dashed #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.upload-icon{
+    height: 40%;
+    width: 40%;
+}
+img{
+    max-width: 100%;
+    height: auto;
+
+}
+.file-input {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 45%;
+}

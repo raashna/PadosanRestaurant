@@ -8,6 +8,7 @@ import Add from './pages/Add/Add'
 import AdminLogin from './pages/AdminLogin/AdminLogin'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Upload from './pages/Upload/Upload'
 
 const App = () => {
 
@@ -36,6 +37,7 @@ const ProtectedRoutes = ({ url }) => {
           <Route path='/add' element={<Add url={url} />} />
           <Route path='/list' element={<List url={url} />} />
           <Route path='/orders' element={<Orders url={url} />} />
+          <Route path='/upload' element={<Upload url={url} />} />
         </Routes>
       </div>
     </>
