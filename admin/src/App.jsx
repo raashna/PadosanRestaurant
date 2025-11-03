@@ -29,6 +29,7 @@ const ProtectedRoutes = ({ url }) => {
   const isAuthenticated = !!localStorage.getItem('token'); // Example check, you can use a better auth check
   return isAuthenticated ? (
     <>
+      <ToastContainer />
       <Navbar />
       <hr />
       <div className='app-content'>
