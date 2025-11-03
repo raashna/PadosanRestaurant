@@ -15,7 +15,7 @@ export const Gallery = () => {
     setError ("");
     setMedia ([]);
     try{
-      const res = await fetch(`http://localhost:4000/api/admin/upload/${destination.toLowerCase()}`);
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/upload/${destination.toLowerCase()}`);
       if(!res.ok){
         throw new Error ("Failed to fetch media");
       }
