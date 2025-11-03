@@ -11,8 +11,6 @@ import adminRouter from "./routes/adminRouter.js";
 import uploadRouter from "./routes/uploadRoute.js";
 
 
-import path from "path";
-
 //app config
 const app= express()
 const port = 4000
@@ -25,8 +23,9 @@ app.use(cors())
 connectDB();
 
 // api endpoints
-const __dirname = path.resolve();
-app.use("/favicon.ico", express.static(path.join(__dirname, "icon/favicon.ico")));
+app.get("/favicon.ico", (req, res) => {
+    res.status(204).end(); // No Content
+});
 
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
