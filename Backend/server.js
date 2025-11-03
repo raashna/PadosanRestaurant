@@ -9,7 +9,11 @@ import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 import adminRouter from "./routes/adminRouter.js";
 import uploadRouter from "./routes/uploadRoute.js";
-//import {v2 as cloudinary} from 'cloudinary';
+
+
+app.get("/favicon.ico", (req, res) => {
+    res.status(204).end(); // No Content
+});
 
 //app config
 const app= express()
