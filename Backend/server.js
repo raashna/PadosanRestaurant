@@ -11,9 +11,7 @@ import adminRouter from "./routes/adminRouter.js";
 import uploadRouter from "./routes/uploadRoute.js";
 
 
-app.get("/favicon.ico", (req, res) => {
-    res.status(204).end(); // No Content
-});
+import path from "path";
 
 //app config
 const app= express()
@@ -27,6 +25,9 @@ app.use(cors())
 connectDB();
 
 // api endpoints
+const __dirname = path.resolve();
+app.use("/favicon.ico", express.static(path.join(__dirname, "icon/favicon.ico")));
+
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
 app.use("/api/user",userRouter)
@@ -42,10 +43,3 @@ app.get("/",(req,res)=>{
 app.listen(port,()=>{
     console.log(`Server started on http://localhost:${port}`)
 })
-
-//configure cloudinary
-// cloudinary.config({
-//     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-//     api_key: process.env.CLOUDINARY_API_KEY,
-//     api_secret: process.env.CLOUDINARY_API_SECRET,
-// });
